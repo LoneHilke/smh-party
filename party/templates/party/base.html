@@ -1,0 +1,110 @@
+{% load menu_generator %}
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", inital-scale=1.0, "shrink-to-fit=no">
+      <title>SMH-Party</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>-->
+   <style>
+   
+   </style>
+
+     </head>
+    <body>
+         <!-- NAV BAR Start -->
+        {% get_menu "NAV_MENU_LEFT" as left_menu %}
+        <div style="float:left;">
+            {% for item in left_menu %}
+                <li class="{% if item.selected %} active {% endif %}">
+                <a href="{{ item.url }}"> <i class="{{ item.icon_class }}"></i> {{ item.name }}</a>
+                </li>
+                {% if item.submenu %}
+                    <ul>
+                    {% for menu in item.submenu %}
+                        <li class="{% if menu.selected %} active {% endif %}">
+                            <a href="{{ menu.url }}">{{ menu.name }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+       {% get_menu "NAV_MENU_RIGHT" as right_menu %}
+        <div style="float:right;">
+            {% for item in right_menu %}
+                <li class="{% if item.selected %} active {% endif %}">
+                    <a href="{{ item.url }}">{{ item.name }}</a>
+                </li>
+                {% if item.submenu %}
+                    <ul>
+                    {% for menu in item.submenu %}
+                        <li class="{% if menu.selected %} active {% endif %}">
+                            <a href="{{ menu.url }}">{{ menu.name }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <!-- NAV BAR End -->
+
+        <!-- Footer Start -->
+        {% get_menu "FOOTER_MENU_LEFT" as left_footer_menu %}
+        <div style="float:left;">
+            <!-- loop through your left footer menus -->
+        </div>
+
+        {% get_menu "FOOTER_MENU_RIGHT" as right_footer_menu %}
+        <div style="float:right;">
+            <!-- loop through your right footer menus -->
+        </div>
+        <!-- Footer End -->
+
+<div class="container mb-3">
+        <div class="row justify-content-left mt-5">
+          <div class="col-md-12 col-sm-12 offset md-1 p-4 text-left">
+            <nav class="navbar bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="\image\smhparty.png" alt="" width="50" height="35">
+    </a><font color=green><h1><b><u><i>SMH-Party</i></u></b></h1></font>
+  </div>
+</nav>
+            
+            <br>
+
+    
+
+      
+      {% block content %}
+
+      {% endblock content %}
+            
+            <h5></h5>
+          </div>
+        </div>
+      </div>
+        <!-- NAV BAR Start -->
+
+
+
+        <!-- Footer Start -->
+        
+
+    </body>
+    <H6><font color=red>>></font><font color=green>This page is made by LMH</font><font color=red><<</font></h6>
+</html>
