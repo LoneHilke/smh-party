@@ -24,64 +24,27 @@
 
      </head>
     <body>
-         <!-- NAV BAR Start -->
-        {% get_menu "NAV_MENU_LEFT" as left_menu %}
-        <div style="float:left;">
-            {% for item in left_menu %}
-                <li class="{% if item.selected %} active {% endif %}">
-                <a href="{{ item.url }}"> <i class="{{ item.icon_class }}"></i> {{ item.name }}</a>
-                </li>
-                {% if item.submenu %}
-                    <ul>
-                    {% for menu in item.submenu %}
-                        <li class="{% if menu.selected %} active {% endif %}">
-                            <a href="{{ menu.url }}">{{ menu.name }}</a>
-                        </li>
-                    {% endfor %}
-                    </ul>
-                {% endif %}
-            {% endfor %}
-        </div>
-
-       {% get_menu "NAV_MENU_RIGHT" as right_menu %}
-        <div style="float:right;">
-            {% for item in right_menu %}
-                <li class="{% if item.selected %} active {% endif %}">
-                    <a href="{{ item.url }}">{{ item.name }}</a>
-                </li>
-                {% if item.submenu %}
-                    <ul>
-                    {% for menu in item.submenu %}
-                        <li class="{% if menu.selected %} active {% endif %}">
-                            <a href="{{ menu.url }}">{{ menu.name }}</a>
-                        </li>
-                    {% endfor %}
-                    </ul>
-                {% endif %}
-            {% endfor %}
-        </div>
-        <!-- NAV BAR End -->
-
-        <!-- Footer Start -->
-        {% get_menu "FOOTER_MENU_LEFT" as left_footer_menu %}
-        <div style="float:left;">
-            <!-- loop through your left footer menus -->
-        </div>
-
-        {% get_menu "FOOTER_MENU_RIGHT" as right_footer_menu %}
-        <div style="float:right;">
-            <!-- loop through your right footer menus -->
-        </div>
-        <!-- Footer End -->
-
+         
 <div class="container mb-3">
         <div class="row justify-content-left mt-5">
           <div class="col-md-12 col-sm-12 offset md-1 p-4 text-left">
             <nav class="navbar bg-body-tertiary">
   <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="\image\smhparty.png" alt="" width="50" height="35">
-    </a><font color=green><h1><b><u><i>SMH-Party</i></u></b></h1></font>
+    <a class="navbar-brand" href="/">
+      <img src="\image\logo6.png" alt="" width="65" height="35" class="d-inline-block align-text-top">
+    </a>
+    
+        
+          <a class="nav-link active" aria-current="page" href="{% url 'bestil' %}">Bestilling</a>
+        <!--</li>
+        <li class="nav-item">-->
+          <a class="nav-link" href="{% url 'pris' %}">Pris</a>
+        <!--</li>
+        <li class="nav-item">-->
+          <a class="nav-link" href="{% url 'om' %}">Om mig</a>
+          <a class="nav-link" href="{% url 'siger' %}">Anbefaling</a>
+        <font color=green><h1><b><u><i>SMH-Party</i></u></b></h1></font>
+     
   </div>
 </nav>
             

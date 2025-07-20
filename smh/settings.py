@@ -51,7 +51,7 @@ NAV_MENU_LEFT = [
     },
     {
         "name": "Ideer",
-        "url": "/ideer",
+        "url": "#",
     },
     {
         "name": "Priser",
@@ -70,8 +70,8 @@ NAV_MENU_LEFT = [
         "url": "/om",
     },
     {
-        "name": "",
-        "url": "#",
+        "name": "Andre logo",
+        "url": "/andre",
     },
     {
         "name": "",

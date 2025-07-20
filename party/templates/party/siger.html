@@ -1,6 +1,29 @@
 {% extends 'party/base.html' %}
 {% block content %}
 <h1><b><u>Andre siger </u></b></h1>
-    <h3>Super god oplevelse</h3>
+<h5>Skriv en anmeldelse eller læs de andres her</h5>
+      <form action="" method="POST">
+            {% csrf_token %}
+            {{ form1.as_p }}
+            <input type="submit" name="ny anmeldelse...">
+      </form>
+      <div class="container mb-2">
+        <table>
+{% for anm in anmeld %}
+        <tr>
+          <td><p style='margin:0;
+          transform: rotate(-25deg);position: relative;'>
+          
+          <u> <b>Anmeldelse:</b></u> {{ anm.anmeld }}<br>
+            <u><b>Navn: </b></u>  {{anm.navn}}
+        </p><br><hr></td>
+        </tr>
+        {% endfor %}
+        </table>
+      </div>
+     </div>
+  </div>
+
+    
   <h2><b><u></u></b></h2>
   {% endblock content %}

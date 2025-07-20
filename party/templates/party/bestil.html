@@ -1,6 +1,43 @@
 {% extends 'party/base.html' %}
 {% block content %}
 <h1><b><u>Bestilling</u></b></h1>
+<br>
+
     <h3>Kom med en dato, og jeg ser om kalenderen er fri</h3>
+    <br>
   <h2><b><u>Hurtig oversigt</u></b></h2>
+
+  <div class="container mb-5">
+  <div class="row justify-content-center mt-1">
+    <div class="col-md-12 col-sm-12 p-4">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="pt-5">
+
+
+            {% for mi in mig  %}
+            <div class="row mt-5">
+
+                  <div class="col-md-8 col-sm-12">
+
+
+                    <div class="d-flex flex-row">
+                       <li> 
+                         <!--<label class="form-check-label">{{ fes.date }}</label>-->
+                        <p class="font-weight-bold pl-5"><b>årstal: </b>{{ mi.årstal }}</p>
+                        <p><b>Info: </b>{{ mi.info }}</p>
+
+
+                      </li>
+                    </div>
+                </div>
+                </div>
+
+
+            {% endfor %}
+        </div>
+    </form>
+    </div>
+  </div>
+  </div>
   {% endblock content %}
