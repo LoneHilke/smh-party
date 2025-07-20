@@ -27,7 +27,13 @@ class Pris(View):
     
 class Siger(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'party/siger.html')
+        anmeld = Anmeld.objects.all()
+        form1 = AnmeldForm()
+        context = {
+            'anmeld': anmeld,
+            'form1': form1
+        }
+        return render(request, 'party/siger.html',context)
     
 class Bestil(View):
     def get(self, request, *args, **kwargs):
@@ -41,10 +47,5 @@ class Bestil(View):
     
 class Andre(View):
     def get(self, request, *args, **kwargs):
-        anmeld = Anmeld.objects.all()
-        form = AnmeldForm()
-        context = {
-            'anmeld': anmeld,
-            'form': form
-        }
-        return render(request, 'party/andre.html', context)
+        
+        return render(request, 'party/andre.html')

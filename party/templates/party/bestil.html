@@ -7,37 +7,86 @@
     <br>
   <h2><b><u>Hurtig oversigt</u></b></h2>
 
-  <div class="container mb-5">
-  <div class="row justify-content-center mt-1">
-    <div class="col-md-12 col-sm-12 p-4">
-    <form method="POST">
-        {% csrf_token %}
-        <div class="pt-5">
+  <h4>Hvis du er blevet interesseret er det vigtigt at jeg får følgende at vide</h4>
 
+      <h4>  - Dato </h4>
+      <h4>  - adresse</h4>
+      <h4>  - hvilken form for fest det drejer sig om</h4>
+              <h4>  - hvilken playliste der er.</h4>
+      <h4>Det er vigtigt at udfylde nedenstående så udførligt som muligt, og sende det til mig</h4>
 
-            {% for mi in mig  %}
-            <div class="row mt-5">
+    <div class="container mt-3">
+      <h3>Ekstra info</h3>
+      <p></p>
 
-                  <div class="col-md-8 col-sm-12">
+      <button type="button" class="btn btn-primary" id="toastbtn">Ekstra info</button>
 
-
-                    <div class="d-flex flex-row">
-                       <li> 
-                         <!--<label class="form-check-label">{{ fes.date }}</label>-->
-                        <p class="font-weight-bold pl-5"><b>årstal: </b>{{ mi.årstal }}</p>
-                        <p><b>Info: </b>{{ mi.info }}</p>
-
-
-                      </li>
-                    </div>
-                </div>
-                </div>
-
-
-            {% endfor %}
+      <div class="toast">
+        <div class="toast-header">
+          <strong class="me-auto">Vigtig info</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
         </div>
-    </form>
+        <div class="toast-body">
+          <p><font color=green>For at være sikker, kan I kopiere bestillingen, og sende den til min email.<br>Min email adresse er:<br>
+          <b>smsmhilke@gmail.com</b></font></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    document.getElementById("toastbtn").onclick = function() {
+      var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+      var toastList = toastElList.map(function(toastEl) {
+        return new bootstrap.Toast(toastEl)
+      })
+      toastList.forEach(toast => toast.show()) 
+    }
+    </script>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div class="container mt-3">
+  <h2><font color=green>Bestil eller spørg her</h2>
+  <p>.</p>
+  
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Gå videre
+  </button>
+</div>
+    
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Bestilling og forespørgsel</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h3>bestil til din næste fest her, eller skriv hvis der er spørgsmål</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" name="ny forespørgsel...">
+        </form>
+        <p>.</p>
+
+        <p>.</p> </font>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+        </div>
+</div>
     </div>
   </div>
-  </div>
+</div>
+
+    </div>
   {% endblock content %}

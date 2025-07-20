@@ -1,7 +1,8 @@
 {% extends 'party/base.html' %}
 {% block content %}
-<h1><b><u>Andre siger </u></b></h1>
-<h5>Skriv en anmeldelse eller læs de andres her</h5>
+<h1><b><u>Se hvad andre siger</u></b></h1>
+<h5><font color=blue>Skriv gerne en anmeldelse eller læs de andres her</font></h5>
+      
       <form action="" method="POST">
             {% csrf_token %}
             {{ form1.as_p }}
@@ -21,8 +22,6 @@
         {% endfor %}
         </table>
       </div>
-     </div>
-  </div>
 
     
   <h2><b><u></u></b></h2>
